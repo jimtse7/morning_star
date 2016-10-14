@@ -1,11 +1,74 @@
 <!DOCTYPE html>
+<html>
+<head>
+<title>Morning Star Felllowship</title>
 
-<html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <title></title>
-    </head>
-    <body>
+<link rel="stylesheet" href="http://www.jimtse.info/morning_star/css/fellowship.css">
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+</head>
+<body onLoad="blinker();">
+<script>
+var app = angular.module("myApp", []); 
+app.controller("myCtrl", function($scope) {
+$scope.prayers = [
+"Cher Zhang: pray for her looking for a new job",
+
+"Esther: pray for her project  can be catched up",
+
+"Chen Tao: pray that God help his rest after go back to China.",
+
+"Deng Bin: It is good for him to find a summer job in west coast, conintune to pray for him to find a permanent full time job.",
+
+"Lienfen: pray that God will give extra energy to me and take care Samuel.",
+
+"Jim: pray that God help me looking for a permanent full time job.",
+
+"Ming-Hui: pray that God will give extra measure of wisdom, health, and strength at work and balancing home life, take care of Hsin-Ji recovery post kidney transplant.",
+
+"Hsin-Ji: pray for good recovery post kidney transplant, pray for God’s guidance for future direction (ministry and job hunt). ",
+];
+});
+</script>
+
+<script>
+ function blinker()
+    {
+        if(document.getElementById("blink"))
+        {
+            var d = document.getElementById("blink") ;
+            d.style.color= (d.style.color=='red'?'white':'red');
+            setTimeout('blinker()', 500);
+        }
+    }
+</script>
+<div align="center" data-ng-app="myApp" data-ng-controller="myCtrl">
+<div style="border:20px solid #666; width:903px;background: linear-gradient(red, yellow);">
+    	<div>
+        	
+        	<img src="images/fellowship.png" />
+        </div>
+           
+        <div  align="left" style="padding-left:10px">
         
-    </body>
+        <p>Dear Friends of Morning Star Fellowship:</p>
+        
+        <p>Please review last week bible study.  Acts 19: 1-11</p>
+        
+        <p>Prayer requests:</p>
+        
+        <ul>
+        <li data-ng-repeat="x in prayers">
+	        <span class="padding_left">{{x}}</span>
+         </li>
+        </ul>
+        <p>In His Grace,</p>
+        
+        <p>Thanks</p>
+        
+         <p>Jim</p>
+        </div>
+      </div>
+</div>
+</body>
 </html>
